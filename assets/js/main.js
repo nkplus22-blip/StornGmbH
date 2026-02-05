@@ -1,26 +1,32 @@
 // ================= OVERLAY MENU =================
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
+
   const burger = document.querySelector(".burger");
   const overlayMenu = document.querySelector(".overlay-menu");
 
-  burger.addEventListener("click", () => {
+  // sigurnosna provjera
+  if (!burger || !overlayMenu) {
+    console.error("Burger ili overlay-menu ne postoji u HTML-u");
+    return;
+  }
+
+  // otvori / zatvori meni klikom na hamburger
+  burger.addEventListener("click", function () {
     overlayMenu.classList.toggle("active");
   });
 
-  overlayMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
+  // zatvori meni klikom na link
+  overlayMenu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
       overlayMenu.classList.remove("active");
     });
   });
 
-  overlayMenu.addEventListener("click", (e) => {
+  // zatvori meni klikom na praznu pozadinu
+  overlayMenu.addEventListener("click", function (e) {
     if (e.target === overlayMenu) {
       overlayMenu.classList.remove("active");
     }
   });
-});
-const closeBtn = document.querySelector(".close-menu");
 
-closeBtn.addEventListener("click", () => {
-  overlayMenu.classList.remove("active");
 });
