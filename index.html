@@ -190,11 +190,13 @@
 
 <!-- ================= JS (HAMBURGER) ================= -->
 <script>
-  const burger = document.getElementById("burger");
-  const menu = document.getElementById("overlayMenu");
+  document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.getElementById("burger");
+    const menu = document.getElementById("overlayMenu");
 
-  burger.addEventListener("click", () => {
-    menu.classList.toggle("active");
+    burger.addEventListener("click", function () {
+      menu.classList.toggle("active");
+    });
   });
 </script>
 
