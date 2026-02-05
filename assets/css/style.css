@@ -401,3 +401,94 @@ img {
   filter: grayscale(0%);
   opacity: 1;
 }
+/* ================= PAGE HERO ================= */
+.page-hero {
+  position: relative;
+  background: url("../img/hero-city.PNG") center/cover no-repeat;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 25, 40, 0.75);
+}
+
+.page-hero-content {
+  position: relative;
+  color: #fff;
+}
+
+.page-hero h1 {
+  font-size: 46px;
+  margin-bottom: 10px;
+}
+
+.page-hero p {
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+/* ================= ABOUT PAGE ================= */
+.about-page {
+  padding: 90px 0;
+}
+
+.about-page-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-page h2 {
+  font-size: 34px;
+  margin-bottom: 25px;
+}
+
+.about-page p {
+  margin-bottom: 15px;
+}
+
+/* ================= VALUES ================= */
+.values {
+  background: #f5f7fa;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.values h2 {
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.value-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+}
+
+.value-card h3 {
+  color: #0057a8;
+  margin-bottom: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .about-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero h1 {
+    font-size: 34px;
+  }
+}
