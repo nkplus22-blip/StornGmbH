@@ -8,7 +8,7 @@
   <!-- SEO -->
   <meta name="description" content="STORN GmbH – Ihr zuverlässiger Partner für Internet-, Telefon- & TV-Anschlüsse, Netzplanung, Endstörung und Multimedia-Aufrüstung in Deutschland.">
 
-  <!-- CSS (FAZA 2) -->
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -37,13 +37,13 @@
     <span class="logo-text">STORN GmbH</span>
   </div>
 
-  <button class="burger" aria-label="Menu">
+  <button class="burger" aria-label="Menu" id="burger">
     <span></span>
     <span></span>
     <span></span>
   </button>
 
-  <nav class="overlay-menu">
+  <nav class="overlay-menu" id="overlayMenu">
     <ul>
       <li><a href="#">HOME</a></li>
       <li><a href="#">ÜBER UNS</a></li>
@@ -56,10 +56,11 @@
   </nav>
 </header>
 
-<!-- ================= HERO SECTION ================= -->
+<!-- ================= HERO SECTION (FULL SCREEN + ANIMATION) ================= -->
 <section class="hero">
-  <div class="network-bg"></div>
-  <img src="assets/img/hero-city.PNG" alt="Telekommunikation Netzwerk">
+  <div class="hero-content">
+    <!-- SVJESNO PRAZNO – animacija je u pozadini -->
+  </div>
 </section>
 
 <!-- ================= INTERNET / TELEFON / TV ================= -->
@@ -98,7 +99,7 @@
   </p>
 </section>
 
-<!-- ================= ÜBER UNS TEXTBLOCK ================= -->
+<!-- ================= ÜBER UNS ================= -->
 <section class="text-image">
   <div class="text">
     <h2>Wir sind in Deutschland ein zuverlässiger Partner für führende Unternehmen.</h2>
@@ -115,7 +116,7 @@
   </div>
 </section>
 
-<!-- ================= DARK STATEMENT ================= -->
+<!-- ================= STATEMENT ================= -->
 <section class="dark-section">
   <h2>
     Vom Consulting über Planung,<br>
@@ -123,7 +124,7 @@
   </h2>
 </section>
 
-<!-- ================= INTERNET / TELEFON / TV (2) ================= -->
+<!-- ================= IMAGE CARDS ================= -->
 <section class="image-card">
   <img src="assets/img/fiber.PNG" alt="Glasfaser">
   <div class="content">
@@ -135,7 +136,6 @@
   </div>
 </section>
 
-<!-- ================= NETZPLANUNG (BILD) ================= -->
 <section class="image-card">
   <img src="assets/img/city-network.PNG" alt="Netzplanung Stadt">
   <div class="content">
@@ -146,7 +146,6 @@
   </div>
 </section>
 
-<!-- ================= ENDSTÖRUNG (BILD) ================= -->
 <section class="image-card">
   <img src="assets/img/technician.PNG" alt="Endstörung Techniker">
   <div class="content">
@@ -173,12 +172,12 @@
 
   <div class="numbers">
     <div>
-      <strong>116</strong>
-      <span>Zufriedene Kunden</span>
+      <strong>116</strong><br>
+      Zufriedene Kunden
     </div>
     <div>
-      <strong>345</strong>
-      <span>Abgeschlossene Projekte</span>
+      <strong>345</strong><br>
+      Abgeschlossene Projekte
     </div>
   </div>
 </section>
@@ -189,7 +188,15 @@
   <p>Design by YugoFamily</p>
 </footer>
 
-<!-- JS (FAZA 2) -->
-<script src="assets/js/main.js"></script>
+<!-- ================= JS (HAMBURGER) ================= -->
+<script>
+  const burger = document.getElementById("burger");
+  const menu = document.getElementById("overlayMenu");
+
+  burger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+</script>
+
 </body>
 </html>
