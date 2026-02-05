@@ -492,3 +492,7 @@ img {
     font-size: 34px;
   }
 }
+.nav a.active {
+  color: #0057a8;
+  font-weight: 700;
+}
