@@ -343,13 +343,14 @@ body {
     grid-template-columns: 1fr;
   }
 }
-.menu-close {
+.close-menu {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 34px;
+  top: 24px;
+  right: 26px;
   background: none;
   border: none;
+  font-size: 48px;
+  font-weight: 300;
   cursor: pointer;
-  color: #000;
+  color: #111;
 }
