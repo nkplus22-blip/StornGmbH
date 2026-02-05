@@ -64,23 +64,21 @@ body {
 
 /* ================= HEADER ================= */
 .main-header {
-  position: absolute;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 22px 26px;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
+  padding: 18px 22px;
+  background: #ffffff;
 
-  border-bottom: 1px solid #e4eeea;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  border-bottom: 1px solid #e3ece7;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 
-  z-index: 2000;
+  z-index: 2500;
 }
 
 .logo-box {
@@ -150,12 +148,17 @@ body {
 }
 
 /* ================= HERO ================= */
-.hero {
+  .hero {
   position: relative;
-  min-height: 100vh;
-  background: var(--bg-light);
+  width: 100%;
+  height: calc(100vh - 110px); /* top-bar + header */
   overflow: hidden;
-  padding-top: 160px; /* prostor za header */
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ================= ANIMATED TELEKOM BACKGROUND ================= */
