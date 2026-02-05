@@ -594,3 +594,74 @@ img {
     grid-template-columns: 1fr;
   }
 }
+/* ================= CAREER ================= */
+.career-why {
+  padding: 90px 0;
+}
+
+.career-why h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 32px;
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.career-box {
+  background: #f5f7fa;
+  padding: 30px;
+  border-radius: 6px;
+}
+
+.career-box h3 {
+  color: #0057a8;
+  margin-bottom: 10px;
+}
+
+/* JOBS */
+.career-jobs {
+  background: #ffffff;
+  padding: 90px 0;
+}
+
+.career-jobs h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.job-card {
+  border-left: 5px solid #0057a8;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  background: #fff;
+}
+
+.job-card h3 {
+  margin-bottom: 10px;
+}
+
+.job-card ul {
+  margin-left: 20px;
+}
+
+/* APPLY */
+.career-apply {
+  background: #0057a8;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.career-apply h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.career-apply p {
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
