@@ -85,10 +85,15 @@ body {
   z-index: 1000;
 }
 
+.main-header {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
 .logo-box {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
+  white-space: nowrap;
 }
 
 .logo-img {
@@ -96,9 +101,9 @@ body {
 }
 
 .logo-text {
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
 /* ================= BURGER ================= */
@@ -172,7 +177,8 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background: linear-gradient(180deg, #f7fbf9, #ffffff);
+  background: linear-gradient(180deg, #f3f7f5, #ffffff);
+  margin-top: 0;
 }
 
 .hero img {
@@ -369,5 +375,23 @@ body {
   .text-image {
     grid-template-columns: 1fr 1fr;
     align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .main-header {
+    padding: 14px 16px;
+  }
+
+  .logo-img {
+    height: 72px;
+  }
+
+  .logo-text {
+    font-size: 22px;
+  }
+
+  .burger span {
+    width: 32px;
+    height: 4px;
   }
 }
