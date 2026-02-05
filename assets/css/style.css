@@ -8,93 +8,60 @@
 html, body {
   width: 100%;
   min-height: 100vh;
-}
-
-/* ================= ROOT ================= */
-:root {
-  --green: #4fae7b;
-  --green-dark: #2f7f59;
-  --text-dark: #0e1412;
-  --text-gray: #5f6f6a;
-  --bg-white: #ffffff;
-  --bg-light: #f6faf8;
-}
-
-/* ================= BODY ================= */
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  background: var(--bg-white);
-  color: var(--text-dark);
-  line-height: 1.7;
+  font-family: Arial, sans-serif;
 }
 
 /* ================= TOP BAR ================= */
 .top-bar {
-  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  background: #2f7f59;
   color: #fff;
-  padding: 14px 22px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 14px;
+  padding: 10px 16px;
   font-size: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  z-index: 1000;
   position: relative;
-  z-index: 3000;
 }
 
 .top-info {
   list-style: none;
   display: flex;
+  gap: 14px;
   flex-wrap: wrap;
-  gap: 18px;
-}
-
-.top-info li {
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
 .top-bar a {
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
 }
 
 /* ================= HEADER ================= */
 .main-header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-
+  position: relative;
+  z-index: 9999;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding: 18px 22px;
-  background: #ffffff;
-
-  border-bottom: 1px solid #e3ece7;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-
-  z-index: 2500;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
+/* ================= LOGO ================= */
 .logo-box {
   display: flex;
   align-items: center;
-  gap: 16px;
-  white-space: nowrap;
+  gap: 12px;
 }
 
 .logo-img {
-  height: 120px;
+  height: 80px;
 }
 
 .logo-text {
-  font-size: 26px;
-  font-weight: 900;
-  letter-spacing: 1.5px;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 /* ================= BURGER ================= */
@@ -104,14 +71,16 @@ body {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 6px;
+  z-index: 10000;
+  position: relative;
 }
 
 .burger span {
-  width: 34px;
+  width: 32px;
   height: 4px;
-  background: var(--green-dark);
-  border-radius: 2px;
+  background: #2f7f59;
+  display: block;
 }
 
 /* ================= OVERLAY MENU ================= */
@@ -120,9 +89,9 @@ body {
   inset: 0;
   background: rgba(255,255,255,0.98);
   display: none;
-  justify-content: center;
   align-items: center;
-  z-index: 9999;
+  justify-content: center;
+  z-index: 20000;
 }
 
 .overlay-menu.active {
@@ -135,22 +104,20 @@ body {
 }
 
 .overlay-menu li {
-  margin: 22px 0;
+  margin: 20px 0;
 }
 
 .overlay-menu a {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--text-dark);
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
   text-decoration: none;
-  letter-spacing: 2px;
 }
 
 /* ================= HERO ================= */
 .hero {
-  position: relative;
   width: 100%;
-  height: calc(100vh - 110px); /* top-bar + header */
+  height: calc(100vh - 140px);
   overflow: hidden;
 }
 
@@ -159,54 +126,39 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  pointer-events: none;
 }
 
-/* ================= SERVICE BLOCK ================= */
+/* ================= CONTENT ================= */
 .service-block {
-  padding: 90px 22px;
+  padding: 60px 20px;
   text-align: center;
-  max-width: 900px;
-  margin: auto;
 }
 
 .service-block h2 {
-  font-size: 34px;
-  margin-bottom: 18px;
-  color: var(--green-dark);
+  color: #2f7f59;
+  margin-bottom: 14px;
 }
 
-.service-block p {
-  color: var(--text-gray);
-  font-size: 18px;
-}
-
-/* ================= TEXT IMAGE ================= */
 .text-image {
-  display: grid;
-  gap: 40px;
-  padding: 90px 22px;
-  max-width: 1200px;
+  padding: 60px 20px;
+  max-width: 1100px;
   margin: auto;
 }
 
 .text-image img {
   width: 100%;
-  border-radius: 14px;
 }
 
-/* ================= STATEMENT ================= */
 .dark-section {
-  background: linear-gradient(135deg, var(--green-dark), var(--green));
-  padding: 100px 22px;
-  text-align: center;
-  font-size: 28px;
-  font-weight: 700;
+  background: #2f7f59;
   color: #fff;
+  padding: 80px 20px;
+  text-align: center;
 }
 
-/* ================= IMAGE CARD ================= */
 .image-card {
-  margin: 100px 0;
+  margin: 60px 0;
 }
 
 .image-card img {
@@ -214,83 +166,35 @@ body {
 }
 
 .image-card .content {
+  padding: 20px;
   max-width: 900px;
   margin: auto;
-  padding: 40px 22px;
 }
 
-.image-card h3 {
-  font-size: 28px;
-  color: var(--green-dark);
-  margin-bottom: 14px;
-}
-
-.image-card p {
-  color: var(--text-gray);
-}
-
-/* ================= CTA ================= */
 .cta {
-  background: linear-gradient(135deg, var(--green-dark), var(--green));
-  padding: 90px 22px;
-  text-align: center;
+  background: #2f7f59;
   color: #fff;
+  text-align: center;
+  padding: 60px 20px;
 }
 
 .cta-phone {
   display: inline-block;
-  margin-top: 24px;
+  margin-top: 20px;
   background: #fff;
-  color: var(--green-dark);
-  padding: 18px 34px;
-  font-size: 22px;
-  font-weight: 800;
+  color: #2f7f59;
+  padding: 14px 28px;
+  font-weight: bold;
   text-decoration: none;
-  border-radius: 40px;
 }
 
-/* ================= STATS ================= */
 .stats {
-  padding: 100px 22px;
+  padding: 60px 20px;
   text-align: center;
 }
 
-.stats .numbers {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-  flex-wrap: wrap;
-}
-
-.stats strong {
-  font-size: 52px;
-  color: var(--green-dark);
-}
-
-/* ================= FOOTER ================= */
 .footer {
-  background: #f3f7f5;
-  padding: 28px;
+  background: #f0f0f0;
   text-align: center;
-  font-size: 14px;
-  color: var(--text-gray);
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .main-header {
-    padding: 14px 16px;
-  }
-
-  .logo-img {
-    height: 90px;
-  }
-
-  .logo-text {
-    font-size: 22px;
-  }
-
-  .text-image {
-    grid-template-columns: 1fr;
-  }
+  padding: 20px;
 }
