@@ -19,3 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+const closeBtn = document.querySelector(".close-menu");
+
+closeBtn.addEventListener("click", () => {
+  overlayMenu.classList.remove("active");
+});
