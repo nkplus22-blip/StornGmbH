@@ -1,4 +1,4 @@
-// ================= OVERLAY MENU =================
+// ================= HAMBURGER / OVERLAY MENU =================
 document.addEventListener("DOMContentLoaded", function () {
 
   const burger = document.querySelector(".burger");
@@ -6,25 +6,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // sigurnosna provjera
   if (!burger || !overlayMenu) {
-    console.error("Burger ili overlay-menu ne postoji u HTML-u");
+    console.error("Burger ili overlay menu ne postoji u HTML-u");
     return;
   }
 
-  // otvori / zatvori meni klikom na hamburger
-  burger.addEventListener("click", function () {
+  // klik na hamburger → otvori / zatvori meni
+  burger.addEventListener("click", function (e) {
+    e.stopPropagation();
     overlayMenu.classList.toggle("active");
   });
 
-  // zatvori meni klikom na link
+  // klik na link → zatvori meni
   overlayMenu.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {
       overlayMenu.classList.remove("active");
     });
   });
 
-  // zatvori meni klikom na praznu pozadinu
+  // klik na praznu pozadinu → zatvori meni
   overlayMenu.addEventListener("click", function (e) {
     if (e.target === overlayMenu) {
+      overlayMenu.classList.remove("active");
+    }
+  });
+
+  // ESC dugme → zatvori meni
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
       overlayMenu.classList.remove("active");
     }
   });
