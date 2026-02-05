@@ -73,21 +73,33 @@ body {
   gap: 14px;
 }
 
+.top-bar {
+  position: relative;
+  z-index: 2000;
+}
+
 /* ================= HEADER ================= */
 .main-header {
-  background: var(--white);
-  padding: 22px 26px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding: 22px 26px;
+
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(8px);
+
   border-bottom: 1px solid #e3ece7;
-  position: relative;
-  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+
+  z-index: 1500;
 }
 
-.main-header {
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-}
 
 .logo-box {
   display: flex;
@@ -181,14 +193,6 @@ body {
   margin-top: 0;
 }
 
-.hero img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  filter: brightness(0.8) contrast(1.05);
-  position: relative;
-  z-index: 2;
-}
 
 /* ================= ANIMATED NETWORK BG ================= */
 .network-bg {
