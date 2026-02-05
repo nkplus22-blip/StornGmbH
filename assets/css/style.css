@@ -13,32 +13,34 @@ html, body {
 /* ================= ROOT ================= */
 :root {
   --green: #4fae7b;
-  --green-light: #8fd9b0;
   --green-dark: #2f7f59;
-  --white: #ffffff;
-  --gray: #5f6f6a;
-  --gray-light: #e9f1ed;
-  --black: #0e1412;
+  --green-soft: rgba(79,174,123,0.25);
+  --text-dark: #0e1412;
+  --text-gray: #5f6f6a;
+  --bg-white: #ffffff;
+  --bg-light: #f6faf8;
 }
 
 /* ================= BODY ================= */
 body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  background: var(--white);
-  color: var(--black);
+  background: var(--bg-white);
+  color: var(--text-dark);
   line-height: 1.7;
 }
 
 /* ================= TOP BAR ================= */
 .top-bar {
   background: linear-gradient(135deg, var(--green-dark), var(--green));
+  color: #fff;
   padding: 14px 22px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 14px;
   font-size: 13px;
-  color: var(--white);
+  position: relative;
+  z-index: 3000;
 }
 
 .top-info {
@@ -54,28 +56,10 @@ body {
   gap: 6px;
 }
 
-.top-info strong {
-  font-weight: 700;
-}
-
 .top-bar a {
-  color: var(--white);
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
-}
-
-.top-bar a:hover {
-  text-decoration: underline;
-}
-
-.top-social {
-  display: flex;
-  gap: 14px;
-}
-
-.top-bar {
-  position: relative;
-  z-index: 2000;
 }
 
 /* ================= HEADER ================= */
@@ -90,16 +74,14 @@ body {
   justify-content: space-between;
 
   padding: 22px 26px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
 
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(8px);
-
-  border-bottom: 1px solid #e3ece7;
+  border-bottom: 1px solid #e4eeea;
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 
-  z-index: 1500;
+  z-index: 2000;
 }
-
 
 .logo-box {
   display: flex;
@@ -109,7 +91,7 @@ body {
 }
 
 .logo-img {
-  height: 120px;
+  height: 130px;
 }
 
 .logo-text {
@@ -129,7 +111,7 @@ body {
 }
 
 .burger span {
-  width: 36px;
+  width: 34px;
   height: 4px;
   background: var(--green-dark);
   border-radius: 2px;
@@ -139,11 +121,15 @@ body {
 .overlay-menu {
   position: fixed;
   inset: 0;
-  background: rgba(255,255,255,0.97);
+  background: rgba(255,255,255,0.98);
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 2000;
+  z-index: 4000;
+}
+
+.overlay-menu.active {
+  display: flex;
 }
 
 .overlay-menu ul {
@@ -158,87 +144,36 @@ body {
 .overlay-menu a {
   font-size: 32px;
   font-weight: 800;
-  color: var(--black);
+  color: var(--text-dark);
   text-decoration: none;
   letter-spacing: 2px;
-  position: relative;
-}
-
-.overlay-menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 0;
-  height: 3px;
-  background: var(--green);
-  transition: width 0.3s ease;
-}
-
-.overlay-menu a:hover::after {
-  width: 100%;
-}
-
-.overlay-menu.active {
-  display: flex;
 }
 
 /* ================= HERO ================= */
 .hero {
   position: relative;
-  width: 100%;
   min-height: 100vh;
+  background: var(--bg-light);
   overflow: hidden;
-  background: linear-gradient(180deg, #f3f7f5, #ffffff);
-  margin-top: 0;
-}
-.hero img {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  filter: brightness(0.8) contrast(1.05);
-
-  z-index: 2;
-
-  animation: slowZoom 18s ease-in-out infinite alternate;
-  will-change: transform;
-}
-@keyframes slowZoom {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.07);
-  }
+  padding-top: 160px; /* prostor za header */
 }
 
+/* ================= ANIMATED TELEKOM BACKGROUND ================= */
 
-/* ================= ANIMATED NETWORK BG ================= */
-.network-bg {
+/* LEBDJEĆE TAČKE (NETWORK NODES) */
+.hero::before {
+  content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(79,174,123,0.45), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(79,174,123,0.35), transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(79,174,123,0.25), transparent 60%);
-  animation: networkMove 6s infinite ease-in-out;
-  z-index: 1;
+    radial-gradient(circle, var(--green-soft) 2px, transparent 3px);
+  background-size: 200px 200px;
+  animation: nodesMove 25s linear infinite;
+  opacity: 0.8;
+  z-index: 0;
 }
 
-@keyframes networkMove {
-  0%   { transform: translate(0, 0); }
-  33%  { transform: translate(40px, -25px); }
-  66%  { transform: translate(-30px, 35px); }
-  100% { transform: translate(0, 0); }
-}
-
-/* SIGNAL LINES */
+/* DATA FLOW LINIJE */
 .hero::after {
   content: "";
   position: absolute;
@@ -249,16 +184,27 @@ body {
       rgba(79,174,123,0.15),
       rgba(79,174,123,0.15) 1px,
       transparent 1px,
-      transparent 70px
+      transparent 90px
     );
-  animation: signalMove 3s linear infinite;
-  z-index: 1;
-  pointer-events: none;
+  animation: dataFlow 6s linear infinite;
+  z-index: 0;
 }
 
-@keyframes signalMove {
+/* ANIMACIJE */
+@keyframes nodesMove {
   from { background-position: 0 0; }
-  to   { background-position: 240px 0; }
+  to   { background-position: 400px 300px; }
+}
+
+@keyframes dataFlow {
+  from { background-position: 0 0; }
+  to   { background-position: 300px 0; }
+}
+
+/* ================= CONTENT LAYER ================= */
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* ================= SERVICE BLOCK ================= */
@@ -267,12 +213,6 @@ body {
   text-align: center;
   max-width: 900px;
   margin: auto;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.service-block:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 .service-block h2 {
@@ -282,7 +222,7 @@ body {
 }
 
 .service-block p {
-  color: var(--gray);
+  color: var(--text-gray);
   font-size: 18px;
 }
 
@@ -300,14 +240,14 @@ body {
   border-radius: 14px;
 }
 
-/* ================= DARK STATEMENT ================= */
+/* ================= STATEMENT ================= */
 .dark-section {
   background: linear-gradient(135deg, var(--green-dark), var(--green));
   padding: 100px 22px;
   text-align: center;
   font-size: 28px;
   font-weight: 700;
-  color: var(--white);
+  color: #fff;
 }
 
 /* ================= IMAGE CARD ================= */
@@ -326,13 +266,13 @@ body {
 }
 
 .image-card h3 {
-  color: var(--green-dark);
   font-size: 28px;
+  color: var(--green-dark);
   margin-bottom: 14px;
 }
 
 .image-card p {
-  color: var(--gray);
+  color: var(--text-gray);
 }
 
 /* ================= CTA ================= */
@@ -340,36 +280,19 @@ body {
   background: linear-gradient(135deg, var(--green-dark), var(--green));
   padding: 90px 22px;
   text-align: center;
-  color: var(--white);
+  color: #fff;
 }
 
 .cta-phone {
   display: inline-block;
   margin-top: 24px;
-  background: var(--white);
+  background: #fff;
   color: var(--green-dark);
   padding: 18px 34px;
   font-size: 22px;
   font-weight: 800;
   text-decoration: none;
   border-radius: 40px;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-phone::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 40px;
-  box-shadow: 0 0 0 0 rgba(79,174,123,0.5);
-  animation: pulse 2.2s infinite;
-}
-
-@keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(79,174,123,0.5); }
-  70%  { box-shadow: 0 0 0 26px rgba(79,174,123,0); }
-  100% { box-shadow: 0 0 0 0 rgba(79,174,123,0); }
 }
 
 /* ================= STATS ================= */
@@ -396,31 +319,24 @@ body {
   padding: 28px;
   text-align: center;
   font-size: 14px;
-  color: var(--gray);
+  color: var(--text-gray);
 }
 
-/* ================= DESKTOP ================= */
-@media (min-width: 768px) {
-  .text-image {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-}
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .main-header {
     padding: 14px 16px;
   }
 
   .logo-img {
-    height: 72px;
+    height: 102px;
   }
 
   .logo-text {
     font-size: 22px;
   }
 
-  .burger span {
-    width: 32px;
-    height: 4px;
+  .text-image {
+    grid-template-columns: 1fr;
   }
 }
