@@ -540,3 +540,57 @@ img {
     padding: 20px;
   }
 }
+/* ================= CONTACT ================= */
+.contact-page {
+  padding: 90px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+}
+
+.contact-form {
+  background: #f5f7fa;
+  padding: 40px;
+  border-radius: 6px;
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.contact-form textarea {
+  min-height: 140px;
+}
+
+.form-note {
+  font-size: 13px;
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
