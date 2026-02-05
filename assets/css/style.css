@@ -324,3 +324,58 @@ img {
     font-size: 38px;
   }
 }
+
+/* ================= BURGER MENU ================= */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 26px;
+  height: 3px;
+  background: #000;
+  transition: all 0.3s ease;
+}
+
+/* Burger animation */
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================= MOBILE NAV ================= */
+@media (max-width: 900px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: #ffffff;
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 6px;
+  }
+
+  .nav a {
+    margin: 10px 0;
+    font-weight: 600;
+  }
+
+  .nav.nav-open {
+    display: flex;
+  }
+}
