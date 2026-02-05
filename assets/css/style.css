@@ -94,6 +94,24 @@ body {
   letter-spacing: 1.5px;
 }
 
+/* ===== BURGER MENU – BIG BOSS ===== */
+.burger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 10px;
+}
+
+.burger span {
+  width: 32px;
+  height: 4px;
+  background: #2f2f2f;
+  border-radius: 2px;
+}
+
 /* ================= OVERLAY MENU ================= */
 .overlay-menu {
   position: fixed;
